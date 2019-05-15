@@ -60,17 +60,17 @@ class Mkv:
         
     def split(self, directoryoriginal):
         for video in self.enzyme['video_tracks']:
-            command="mkvextract '{0}' tracks {1}:{2}/{1}.{3}".format(self.filename, video['number'],  directoryoriginal, self.__codec2extension(video['codec_id']))
+            command="mkvextract '{0}' tracks {1}:{2}/{1}.{3}".format(self.filename, video['number']-1,  directoryoriginal, self.__codec2extension(video['codec_id']))
             print (video)
             print(command)
             os.system(command)
         for video in self.enzyme['audio_tracks']:
-            command="mkvextract '{0}' tracks {1}:{2}/{1}.{3}".format(self.filename, video['number'],  directoryoriginal, self.__codec2extension(video['codec_id']))
+            command="mkvextract '{0}' tracks {1}:{2}/{1}.{3}".format(self.filename, video['number']-1,  directoryoriginal, self.__codec2extension(video['codec_id']))
             print (video)
             print(command)
             os.system(command)
         for video in self.enzyme['subtitle_tracks']:
-            command="mkvextract '{0}' tracks {1}:{2}/{1}.{3}".format(self.filename, video['number'],  directoryoriginal, self.__codec2extension(video['codec_id']))
+            command="mkvextract '{0}' tracks {1}:{2}/{1}.{3}".format(self.filename, video['number']-1,  directoryoriginal, self.__codec2extension(video['codec_id']))
             print (video)
             print(command)
             os.system(command)
@@ -84,6 +84,8 @@ class Mkv:
             return "srt"
         elif type=='A_AAC':
             return "aac"
+        elif type=='V_MPEG4/ISO/AVC':
+            return "h264"
         else:
             return "avi"
         
