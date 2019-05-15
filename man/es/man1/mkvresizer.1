@@ -1,0 +1,130 @@
+.TH MKVRESIZER 1 2019\-05\-15
+.SH NAME
+
+.B mkvresizer:
+Cambia el propietario y los permisos de ficheros y directorios recursivamente.
+.SH SYNOPSIS
+
+mkvresizer usage: mkvresizer [\-h] [\-\-version] [\-\-insert | \-\-generate] [\-\-user USER]
+                   [\-\-port PORT] [\-\-host HOST] [\-\-db DB] [\-\-output OUTPUT]
+                   [\-\-format {PDF,ODT}]
+.SH DESCRIPCI\('ON
+
+.PP
+Esta aplicaci\('on tiene los siguientes par\('ametros obligatorios
+.PP
+.RS
+.B \-\-insert
+.RE
+.PP
+.RS
+.RS
+A\(~nade un directorio con pel\('iculas cuyo \('indice es el nombre num\('erico del \('ultimo directorio.
+.RE
+.RE
+.PP
+.RS
+.B \-\-generate
+.RE
+.PP
+.RS
+.RS
+Genera el documento con la colecci\('on de pel\('iculas
+.RE
+.RE
+.PP
+Par\('ametros de conexi\('on a la base de datos Postgresql
+.PP
+.RS
+.B \-\-user
+.RE
+.PP
+.RS
+.RS
+Usuario de la base de datos. Por defecto 'postgres'.
+.RE
+.RE
+.PP
+.RS
+.B \-\-port
+.RE
+.PP
+.RS
+.RS
+Puerto de la base de datos. Por defecto '5432'
+.RE
+.RE
+.PP
+.RS
+.B \-\-host
+.RE
+.PP
+.RS
+.RS
+Servidor de la base de datos. Por defecto '127.0.0.1'
+.RE
+.RE
+.PP
+.RS
+.B \-\-db
+.RE
+.PP
+.RS
+.RS
+Database name. By default 'mkvresizer'.
+.RE
+.RE
+.PP
+.RS
+.B \-\-output
+.RE
+.PP
+.RS
+.RS
+Ruta donde se va a crear el libro de pel\('iculas. Puedes usar este par\('ametro tantas veces como quieras.
+.RE
+.RE
+.PP
+.RS
+.B \-\-format
+.RE
+.PP
+.RS
+.RS
+Puedes elegir PDF \('o ODT como argumentos. PDF es usado por defecto.
+.RE
+.RE
+.SH EJEMPLOS
+
+.PP
+.RS
+.B A\(~nade pel\('iculas con el \('indice 23
+.RE
+.PP
+.RS
+.RS
+mkvresizer \-\-insert /path/to/my/movies/23
+.RE
+.RE
+.PP
+.RS
+.RS
+Este comando a\(~nade a la base de datos hasta 6 pel\('iculas del directorio 23. Cada pel\('icula debe tener su car\('atula con el mismo nombre.
+.RE
+.RE
+.PP
+.RS
+.B Genera un libro con todas las pel\('iculas en la base de datos
+.RE
+.PP
+.RS
+.RS
+mkvresizer \-\-generate \-\-output /home/user/mymoviecollection.pdf
+.RE
+.RE
+.PP
+.RS
+.RS
+Este comando genera un libro de pel\('iculas en la ruta de salida.
+.RE
+.RE

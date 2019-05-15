@@ -1,0 +1,130 @@
+.TH MKVRESIZER 1 2019\-05\-15
+.SH NAME
+
+.B mkvresizer:
+Change files and directories owner and permissions recursively.
+.SH SYNOPSIS
+
+mkvresizer usage: mkvresizer [\-h] [\-\-version] [\-\-insert | \-\-generate] [\-\-user USER]
+                   [\-\-port PORT] [\-\-host HOST] [\-\-db DB] [\-\-output OUTPUT]
+                   [\-\-format {PDF,ODT}]
+.SH DESCRIPTION
+
+.PP
+This app has the following mandatory parameters:
+.PP
+.RS
+.B \-\-insert
+.RE
+.PP
+.RS
+.RS
+Inserts a directory with movies with the index of the last directory numeric name.
+.RE
+.RE
+.PP
+.RS
+.B \-\-generate
+.RE
+.PP
+.RS
+.RS
+Generates the movie collection document
+.RE
+.RE
+.PP
+Postgresql database connection parameters:
+.PP
+.RS
+.B \-\-user
+.RE
+.PP
+.RS
+.RS
+User of the database. By default 'postgres'.
+.RE
+.RE
+.PP
+.RS
+.B \-\-port
+.RE
+.PP
+.RS
+.RS
+Database port. By default '5432'
+.RE
+.RE
+.PP
+.RS
+.B \-\-host
+.RE
+.PP
+.RS
+.RS
+Database server. By default '127.0.0.1'.
+.RE
+.RE
+.PP
+.RS
+.B \-\-db
+.RE
+.PP
+.RS
+.RS
+Database name. By default 'mkvresizer'.
+.RE
+.RE
+.PP
+.RS
+.B \-\-output
+.RE
+.PP
+.RS
+.RS
+Path where the movie book it's going to be generated. You can use this parameter as many times as you want.
+.RE
+.RE
+.PP
+.RS
+.B \-\-format
+.RE
+.PP
+.RS
+.RS
+You can choose PDF or ODT arguments. PDF is used by default.
+.RE
+.RE
+.SH EXAMPLES
+
+.PP
+.RS
+.B Insert movies with index 23
+.RE
+.PP
+.RS
+.RS
+mkvresizer \-\-insert /path/to/my/movies/23
+.RE
+.RE
+.PP
+.RS
+.RS
+This command insert in database all movies (up to 6) in 23 directory. Each film must have it's cover with the same filename.
+.RE
+.RE
+.PP
+.RS
+.B Generate a book with all movies in the database
+.RE
+.PP
+.RS
+.RS
+mkvresizer \-\-generate \-\-output /home/user/mymoviecollection.pdf
+.RE
+.RE
+.PP
+.RS
+.RS
+This command generates a movie book in the output path.
+.RE
+.RE

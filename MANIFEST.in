@@ -1,5 +1,7 @@
 include LICENSE *.py
-recursive-include mkvresizer *.py *.png
+recursive-include locale *.po 
+recursive-include mkvresizer *.mo *.py *.png *.sql
+recursive-include man *.1
+recursive-include doc *.py Doxyfile index.dox mkvresizer*.png
 prune __pycache__
-prune doc/html
 global-exclude *.pyc
